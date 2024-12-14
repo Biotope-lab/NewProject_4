@@ -1,0 +1,38 @@
+﻿<krpano>
+
+
+
+
+	<style name="buttonstyle"
+		   width="100" height="40"
+		   background="true" backgroundcolor="0xFFFF00" backgroundalpha="0.9"
+		   border="true" bordercolor="0xFFFFFF" borderwidth="2"
+		   roundedge="10"
+		   enabled="true"
+		   onhover="set(layer[%0].backgroundcolor, 0xFFFF99); set(layer[%0].backgroundalpha, 1.0);"
+		   onout="set(layer[%0].backgroundcolor, 0xFFFF00); set(layer[%0].backgroundalpha, 0.9);" />
+	
+	
+	<!-- 이미지를 표시할 버튼 정의 -->
+	<layer name="show_image_button" style="buttonstyle" align="center" x="0" y="0" onclick="set(layer[popup].visible, true);">
+		<html>
+			<b>이미지 보기</b>
+		</html>
+	</layer>
+
+	<!-- 이미지가 표시될 팝업 레이어 정의 -->
+	<layer name="popup" visible="true" type="container" align="center" width="80%" height="80%" background="true" backgroundcolor="0x000000" backgroundalpha="0.8" border="true" bordercolor="0xffffff" borderwidth="2" roundedge="10">
+		<image name="popup_image" url="photo/1.png" align="center" scale="fit" />
+		<!-- 팝업 닫기 버튼 -->
+		<layer name="close_button" url="%SWFPATH%/plugins/skin/close.png" onclick="set(layer[popup].visible, false);" align="topright" x="-10" y="10" />
+	</layer>
+
+	<!-- 팝업을 여는 버튼 정의 -->
+	<layer name="showpopupbutton" style="buttonstyle" align="center" x="0" y="10" onclick="set(layer[popup].visible, true);">
+		<html>
+			<b>Show Image</b>
+		</html>
+	</layer>
+</krpano>
+
+
